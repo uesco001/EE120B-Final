@@ -151,7 +151,7 @@ void Jukebox (){
 	}
 	switch(Menu_state){
 		case welcome:
-		if(!flaggor){LCD_DisplayString(1,"PRESS ANY BUTTON"); flaggor = 0x01;}
+		if(!flaggor){LCD_DisplayString(1,"WELCOME 2 JUKE[]PRESS ANY BUTTON"); flaggor = 0x01;}
 		break;
 		
 		case start:
@@ -400,6 +400,8 @@ void displaynote(){
 		}
 }
 
+
+
 int main(void)
 {
 	DDRA = 0x00; PORTA = 0xFF;
@@ -409,7 +411,7 @@ int main(void)
 	TimerSet(214);
 	TimerOn();
 	LCD_init();
-	Menu_state = start;
+	Menu_state = welcome;
 	PWM_on();
 	while (1)
 	{
